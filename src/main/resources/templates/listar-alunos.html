@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Valores</title>
+
+		<!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="/sucesso">Bootcamp</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/listar-alunos">Lista Alunos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="listar-professores">Lista Professores</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		<div>
+			<h1 style="text-align: center; font-size: 30px; margin: 40px auto"
+				class="display-6">Tabela de Cadastros dos Alunos</h1>
+		</div>
+		
+		<form style="margin: 10px auto" th:action="@{/novo-aluno}">
+			<div style="text-align: center;">
+				<button style="border: 1px solid black; border-radius: 10px"
+					type="submit" class="btn btn-light">Novo Aluno</button>
+			</div>
+		</form>
+
+		<table style="margin: 40px auto" class="table">
+			<thead>
+				<tr>
+					<th scope="col">NOME DO ALUNO</th>
+					<th scope="col">DATA DE NASCIMENTO</th>
+					<th scope="col">E-MAIL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="aluno : ${alunos}">
+					<td th:text="${aluno.nomeAluno}"></td>
+					<td th:text="${aluno.nascimentoAluno}"></td>
+					<td th:text="${aluno.emailAluno}"></td>
+					<td class="text-center"><a
+						th:href="@{/aluno/{id}(id = ${aluno.id})}" class="btn btn-primary">editar</a>
+						<a th:href="@{/aluno/excluir/{id}(id = ${aluno.id})}"
+						class="btn btn btn-danger">excluir</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+INSERT INTO TB_CURSO(ID_CURSO, NOME_CURSO) VALUES (1, 'Java')
+INSERT INTO TB_CURSO(ID_CURSO, NOME_CURSO) VALUES (2, 'Python')
+INSERT INTO TB_CURSO(ID_CURSO, NOME_CURSO) VALUES (3, 'C#')
+
+INSERT INTO TB_ALUNO VALUES(1, '123.763.237-87', 'andremigotto98@gmail.com', '25/02/1998', 'André Migotto', '123', 2)
+INSERT INTO TB_ALUNO VALUES(2, '122.323.237-87', 'joaosilva@gmail.com', '25/02/1998', 'João Silva', 'password', 2)
+INSERT INTO TB_ALUNO VALUES(3, '123.763.237-87', 'ricardosouza@gmail.com', '25/02/1998', 'Ricardo Souza Junior', 'password', 1)
+INSERT INTO TB_ALUNO VALUES(4, '182.736.938-53', 'thaischanan@gmail.com', '25/02/1998', 'Thais Chanan Camara', 'password', 3)
+INSERT INTO TB_ALUNO VALUES(5, '222.888.777-43', 'danieltan@gmail.com', '25/02/1998', 'Daniel Tan', 'password', 1)
+INSERT INTO TB_ALUNO VALUES(6, '873.822.999-83', 'henriquemigotto	@gmail.com', '25/02/1998', 'Henrique Migotto', 'password', 3)
+INSERT INTO TB_ALUNO VALUES(7, '778.334.902-42', 'gladiador1992@gmail.com', '25/02/1998', 'Kleber Gladiador', 'password', 2)
+INSERT INTO TB_ALUNO VALUES(8, '746.023-009-32', 'marcinhomatador@gmail.com', '25/02/1998', 'Marcinho Guerreiro', 'password', 1)
+
+INSERT INTO TB_PROFESSOR VALUES(1, '746.023-009-32', 'marcinhoguerreiro@gmail.com', '25/02/1998', 'Marcinho Guerreiro', 'password', 1)
+INSERT INTO TB_PROFESSOR VALUES(2, '222.888.777-43', 'marcinhogladiador@gmail.com', '25/02/1998', 'Marcinho Gladiador', 'password', 2)
+INSERT INTO TB_PROFESSOR VALUES(3, '123.763.237-87', 'marcinhomatador@gmail.com', '25/02/1998', 'Marcinho Matador', 'password', 3)

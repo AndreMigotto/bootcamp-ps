@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Home</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstraptheme.min.css}"
+	rel="stylesheet" />
+
+<style>
+.logo-container {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div style="text-align: center; font-size: 23px; font-weight: bold"
+			class="w-auto p-3 mt-3 logo-container">CADASTRO DE PROFESSOR</div>
+		<br>
+		<form method="POST" th:object="${professor}"
+			th:action="@{/salvar-professor}">
+
+			<div class="form-row">
+
+				<div>
+					<input type="hidden" th:field="*{id}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">CPF:</label> <input required="required"
+						type="text" class="form-control" th:field="*{cpfProfessor}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Nome:</label> <input required="required"
+						type="text" class="form-control" th:field="*{nomeProfessor}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Nascimento:</label> <input required="required"
+						type="date" class="form-control" th:field="*{nascimentoProfessor}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">E-mail:</label> <input required="required"
+						type="text" class="form-control" th:field="*{emailProfessor}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+					<label for="nome">Senha:</label> <input required="required"
+						type="password" class="form-control" th:field="*{senhaProfessor}">
+				</div>
+
+				<div class="form-group col-md-6 mt-3">
+	      		<select class="form-select" th:field="*{curso.id}">
+		      		<option th:each="var : ${cursos}"
+		      		th:value="${var.id}"
+		      		th:text="${var.nomeCurso}">	     		
+		      		</option>	      		
+	      		</select>
+	    		</div>
+			</div>
+
+			<div style="margin: 10px auto">
+				<button type="submit"
+					style="border: 1px solid black; border-radius: 10px"
+					class="btn btn-light">Salvar</button>
+			</div>
+		</form>
+		<br>
+	</div>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
